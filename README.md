@@ -1,4 +1,4 @@
-# \<Insegnamento\>
+# Elettromagnetismo 
 
 Una raccolta di risorse per l'insegnamento di Elettromagnetismo del Corso di
 Laurea in Fisica. Ulteriori informazioni sono disponibili sulla
