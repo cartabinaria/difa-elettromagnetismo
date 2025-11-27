@@ -1,0 +1,500 @@
+\documentclass[./main.tex]{subfiles}
+
+\begin{document}
+\section{Elettrostatica di conduttori e dielettrici}
+\subsection{Proprietà dei conduttori}
+I conduttori sono materiali in cui le cariche possono muoversi liberamente. I conduttori che si incontrano più comunemente sono metalli, ovvero solidi cristallini che presentano un gran numero di elettroni liberi. Sono proprio questi elettroni le cariche in grado di muoversi. Il fatto che le cariche siano libere di muoversi, e quindi libere di raggiungere una posizione di equilibrio, porta a una serie di proprietà caratteristiche.
+
+Tutto prende il via da un'osservazione sperimentale:
+\begin{fact}[Induzione elettrostatica]
+Immergendo un metallo in un campo elettrostatico costante nel tempo, si osserva movimento di carica; dopo un tempo dell'ordine del microsecondo, tuttavia, il movimento cessa.
+\end{fact}
+Immergendo il metallo nel campo, le cariche al suo interno vengono sottoposte a una forza, causata dall'interazione col campo. Quando esse si fermano, smettono di accelerare: ciò significa che su di esse deve agire un'altra forza, uguale e opposta a quella del campo esterno. Questa forza non può derivare da altro che dalla distribuzione stessa che le cariche raggiungono. In altre parole, le cariche si dispongono in modo che il campo da esse generato, detto \emph{campo elettrostatico indotto}, controbilanci esattamente il campo esterno in ogni punto interno\footnote{Cioè non sulla superficie.} al conduttore. Si noti che ciò è sicuramente possibile perché le cariche sono libere di muoversi in ogni punto interno al conduttore. Dunque
+\begin{mdframed}
+All'equilibrio, il campo elettrico interno a un conduttore è nullo, anche in presenza di un campo esterno.
+\end{mdframed}
+A questo punto, si può usare il teorema di Gauss in forma differenziale per arrivare a un altro risultato, riguardante la densità di carica (e quindi la carica) all'interno di un conduttore:
+\begin{equation}
+\rho = \ezero \bnabla \cdot \mathbf{E} = \ezero \bnabla \cdot 0 = 0
+\end{equation}
+\begin{mdframed}
+All'equilibrio, in ogni punto interno al conduttore la densità di carica è nulla: al suo interno, il conduttore è neutro. Lo spostamento di cariche elettriche si risolve in una distribuzione di carica che interessa solo la superficie del conduttore.
+\end{mdframed}
+Inoltre, all'equilibrio le cariche non possono muoversi sulla superficie del conduttore, né tantomeno verso il suo interno. L'unica possibilità per il valore $\mathbf{E}$ sulla superficie, quindi, è che esso sia normale ad essa e orientato in modo che la forza risultante sulle cariche superficiali sia diretta verso l'esterno (si assume infatti che sia in ogni caso impossibile per esse uscire dal conduttore): se la distribuzione di carica in un punto è positiva, $\mathbf{E}$ in quel punto deve essere diretto verso l'esterno, e viceversa se è negativa. Per quanto detto nella sezione \ref{G-par:CompNormSupCar}, dato che all'interno del conduttore $E = 0$, si ha $E = E_{\perp} = \frac{\sigma}{\ezero}$.
+\begin{mdframed}
+L'immersione di un conduttore in un campo elettrico altera le sue linee di campo in modo che esse tocchino la superficie del conduttore in direzione normale ad essa.
+\end{mdframed}
+Questo implica che, presi due punti $A$ e $B$ sulla superficie di un conduttore, sia 
+\begin{equation}
+\Delta V_{AB} = - \int_{A}^{B} \mathbf{E} \cdot \mathbf{\dx{s}} = - \int_{A}^{B} 0 = 0
+\end{equation}
+D'altra parte, presi due punti $C$ e $D$ interni ad esso, 
+\begin{equation}
+\Delta V_{CD} = - \int_{C}^{D} \mathbf{E} \cdot \mathbf{\dx{s}} = - \int_{A}^{B} 0 \cdot \mathbf{\dx{s}} = 0
+\end{equation}
+\begin{mdframed}
+Riassumendo, la superficie di un conduttore è equipotenziale, così come il suo interno.
+\end{mdframed}
+I due non sono però necessariamente equipotenziali \emph{tra loro}: la differenza di potenziale tra essi è nota come \emph{lavoro di estrazione}. Esso è però trascurabile nella maggior parte dei casi.
+
+\subsection{Conduttori cavi elettricamente neutri}
+\subsubsection{Gabbia di Faraday} \label{subsec:GabFaraday}
+Si consideri un conduttore cavo, con superficie esterna $\Sigma_{e}$ e superficie interna $\Sigma_{i}$. Applicando il teorema di Gauss a una superficie $\Sigma$ interamente contenuta all'interno del conduttore, si ha che la sua carica complessiva è 
+\begin{equation}
+Q_{I} = \ezero \oint_{\Sigma} \mathbf{E} \cdot \mathbf{\dx{S}} = \ezero \oint_{\Sigma} 0 \cdot \mathbf{\dx{S}} = 0
+\end{equation}
+Dunque $\Sigma_{i}$ è complessivamente neutra. 
+
+Inoltre, si considerino due punti $A$ e $B$ su $\Sigma_{i}$. Se all'interno della cavità esistesse un campo non nullo, sarebbe possibile costruire un percorso chiuso $\Gamma$ che segua in modo equiverso una linea di campo da $A$ a $B$ all'interno della cavità, e torni poi da $B$ ad $A$ in maniera arbitraria all'interno del conduttore. Dato però che il campo elettrostatico deve avere circuitazione nulla, sarebbe
+\begin{equation}
+0 = \oint_{\Gamma} \mathbf{E} \cdot \mathbf{\dx{\gamma}} = \int_{A}^{B} \mathbf{E} \cdot \mathbf{\dx{\gamma}} + \int_{B}^{A} \mathbf{E} \cdot \mathbf{\dx{\gamma}} = \int_{A}^{B} \mathbf{E} \cdot \mathbf{\dx{\gamma}} + \int_{B}^{A} 0 \cdot \mathbf{\dx{\gamma}} = \int_{A}^{B} E \dx{\gamma} > 0
+\end{equation}
+il che è assurdo. 
+Dunque il campo elettrostatico all'interno di una cavità praticata in un conduttore deve essere nullo. Dato che esso è nullo sia all'interno della cavità che del conduttore, deve essere nulla per quanto detto nella sezione \ref{G-par:CompNormSupCar} anche la densità di carica su $\Sigma_{i}$. Questi fenomeni sono noti come \emph{gabbia di Faraday.}
+
+\subsubsection{Carica nella cavità}
+Consideriamo ora, con la stessa notazione del paragrafo precedente, il caso in cui all'interno della cavità sia presente una carica puntiforme $q$. Ponendo $\Sigma$ all'interno del conduttore, vale ancora che
+\begin{equation}
+Q_{I} = \ezero \oint_{\Sigma} \mathbf{E} \cdot \mathbf{\dx{S}} = \ezero \oint_{\Sigma} 0 \cdot \mathbf{\dx{S}} = 0
+\end{equation}
+Stavolta, però, sappiamo che all'interno di $\Sigma$ è contenuta almeno una carica $q$, quindi deve esservi presente anche un'altra carica $-q$. Essa non può trovarsi all'interno del conduttore, dunque può essere distribuita solo sulla superficie interna del conduttore. Essendo esso elettricamente neutro, però, ciò implica che sulla superficie esterna debba formarsi una distribuzione con carica complessiva $q$. Questa distribuzione produrrà un campo elettrostatico non più radiale rispetto a $q$, ma normale a $\Sigma_{e}$. Comunque, questo campo non è prodotto dalla carica ma dal conduttore: un conduttore cavo scherma il campo elettrostatico \emph{in entrambi i sensi}. L'informazione sulla configurazione di carica nella cavità non passa mai all'esterno: il campo elettrico generato al conduttore  dipende solo dal \emph{valore totale} della carica. In particolare, esso non cambia neanche se la carica interna viene passata al conduttore, ad esempio per contatto.
+
+Questo tipo di situazione, in cui tutte le linee di campo che escono da una carica entrano in un conduttore, è detto di \emph{induzione completa}.
+
+\subsection{Conduttori carichi isolati}
+Sperimentalmente si osserva quanto segue:
+\begin{fact}
+Se si deposita una carica su un conduttore, dopo un tempo solitamente dell'ordine del $\SI{}{\micro\second}$ non si registra spostamento di cariche.
+\end{fact}
+Si possono quindi enunciare le stesse leggi già enunciate per i conduttori neutri:
+\begin{mdframed}
+\begin{itemize}
+\item All'equilibrio, il campo elettrico interno a un conduttore è nullo, anche in presenza di un campo esterno.
+\item All'equilibrio, in ogni punto interno al conduttore la densità di carica è nulla: al suo interno, il conduttore è neutro. Lo spostamento di cariche elettriche si risolve in una distribuzione di carica che interessa solo la superficie del conduttore.
+\item L'immersione di un conduttore in un campo elettrico altera le sue linee di campo in modo che esse tocchino la superficie del conduttore in direzione normale ad essa.
+\item La superficie di un conduttore è equipotenziale, così come il suo interno.
+\end{itemize}
+Inoltre, ragionando come nella sezione \ref{subsec:GabFaraday} si trova che
+\begin{itemize}
+\item Se il conduttore è cavo, all'equilibrio le cariche sono distribuite sulla sua superficie esterna.
+\end{itemize}
+\end{mdframed}
+
+\subsection{Densità di carica e curvatura}
+Consideriamo due conduttori sferici di raggi $R_{1}$ e $R_{2}$, molto distanti in modo che non interagiscano, e colleghiamoli con un filo conduttore di superficie trascurabile, su cui poniamo una carica $q$. Di questa carica, una parte $q_{1}$ andrà sul conduttore $1$, e la rimanente parte $q_{2}$ andrà sul $2$; vogliamo calcolare queste cariche e le rispettive densità. Una volta collegate, le due sfere formano un unico conduttore, la cui superficie deve quindi essere equipotenziale. Essendo le sfere lontane fra loro, possiamo considerare i potenziali di ciascuna individualmente.
+\begin{equation}
+V(R_{1}) - V(\infty) = \int_{R_{1}}^{+\infty} \mathbf{E} \cdot \mathbf{\dx{r}) = \int_{R_{1}}^{+\infty} \dfrac{1}{4 \pi \ezero} \dfrac{q}{r^{2}} \dx{r}} = \dfrac{1}{4 \pi \ezero} \dfrac{q_{1}}{R_{1}}
+\end{equation}
+Analogamente, deve essere
+\begin{equation}
+V(R_{2}) - V(\infty) = \dfrac{1}{4 \pi \ezero} \dfrac{q_{2}}{R_{2}}
+\end{equation}
+e dunque, dovendo essere i due potenziali uguali, deve essere 
+\begin{equation}
+\dfrac{q_{1}}{R_{1}} = \dfrac{q_{2}}{R_{2}}
+\end{equation}
+Per quanto riguarda le densità di carica, esse sono
+\begin{gather}
+\sigma_{1} = \dfrac{q_{1}}{4 \pi \ezero R_{1}^{2}} \\
+\sigma_{2} = \dfrac{q_{2}}{4 \pi \ezero R_{2}^{2}}
+\end{gather}
+e quindi 
+\begin{equation}
+\sigma_{1} R_{1} = \sigma_{2} R_{2}
+\end{equation}
+Una sfera più grande, quindi, riceve una quantità di carica maggiore, ma ne ricava una densità minore. Da qui deriva il fenomeno della \emph{messa a terra}: la Terra ha un raggio che ai fini pratici può essere considerato infinito, ed è un conduttore. Dunque essa assorbe la carica da qualsiasi conduttore le sia collegata, senza mai aumentare la propria densità di carica superficiale. Da queste equazioni si ottiene la relazione fra curvatura locale e densità di carica locale sulla superficie di un conduttore generico. Infatti, la superficie di un conduttore arbitrario può essere formata a partire da porzioni infinitesimi di sfere con raggio $R$, detto \emph{raggio di curvatura}, dipendente dal punto. Queste porzioni di sfera sono affiancate, e il campo sulla loro superficie è loro normale: esse continuano a non interagire, dunque si può applicare quanto ottenuto sopra. A dire il vero, esiste un caso che non può essere trattato riconducendosi a una sfera, ovvero quello di una porzione di conduttore concava, descritta da un raggio di curvatura negativo. In questo caso, però, si osserva che la densità di carica in tali regioni è nulla. Dunque, per un qualsiasi conduttore, si ha che 
+\begin{mdframed}
+\begin{equation}
+\sigma = \left\lbrace \begin{matrix}
+\frac{k}{R}\ \mathrm{se\ } R > 0 \\
+0 \mathrm{\ se\ } R < 0 
+\end{matrix} \right.
+\end{equation}
+dove $k$ è costante su tutta la superficie del conduttore e $\sigma$ e $R$ sono calcolate punto per punto.
+\end{mdframed}
+Da questo fatto deriva il cosiddetto \emph{potere dispersivo delle punte}: per $R\rightarrow 0$, $\sigma \rightarrow \infty$ e l'energia potenziale diventa abbastanza alta da staccare le cariche dal conduttore, formando scintille nei gas ed effluvi di elettroni nel vuoto. Il fatto che la densità di carica nei punti di curvatura non positiva sia nulla fornisce anche una spiegazione alternativa al fatto che la carica sulla superficie interna dei conduttori cavi sia nulla: basta infatti considerare un conduttore convesso, per esempio una sfera cava con un foro circolare, che progressivamente si chiude e lascia due superfici separate.
+
+\subsection{Condensatori}
+\subsubsection{Tubo di flusso}
+Dato un campo qualsiasi, si definisce \emph{tubo di flusso} la superficie costituita dall'insieme delle linee di campo che si appoggiano su una curva chiusa. La superficie laterale di un tubo di flusso è ovviamente parallela al campo in ogni suo punto, dunque il flusso attraverso di essa è sempre nullo. Considerando ora il campo elettrico, aggiungendo a un tubo infinitesimo due superfici infinitesime $\dx{S_{1}}$ e $\dx{S_{2}}$ che lo chiudano si ha che per la legge di Gauss $\mathbf{\dx{S}}_{1} \cdot \mathbf{E}_{1} + \mathbf{\dx{S}}_{2} \cdot \mathbf{E}_{2} = \frac{\dx{q}}{\ezero}$. È sempre possibile scegliere $\mathbf{\dx{S_{1}}} \parallel \mathbf{E}_{1}, \mathbf{\dx{S_{2}}} \parallel \mathbf{E}_{2}$. In tal caso si ha più semplicemente $\dx{S_{1}} \mathbf{E}_{1} + \dx{S_{2}} \mathbf{E}_{2} = \frac{\dx{q}}{\ezero}$. Se il tubo di flusso è finito, si integra sule superfici infinitesime.
+\subsubsection{Applicazione a un conduttore carico}
+Prendiamo un conduttore con superficie carica e consideriamo un tubo di flusso del suo campo elettrostatico, estendendo però le linee di campo in modo arbitrario all'interno del conduttore. Chiamando $\dx{S}_{1}$ la base del tubo all'interno del conduttore, si ha $\mathbf{E}_{1} = 0$ e dunque $E_{2} \dx{S}_{2} = \frac{\dx{q}}{\ezero}$, da cui si ricava che
+\begin{equation} \label{eq:TuboFlusso}
+E_{2} = \dfrac{\dx{q}}{\ezero \dx{S}_{2}}
+\end{equation}
+\subsubsection{Condensatori e capacità}
+Un \emph{condensatore} è una struttura composta da due conduttori, detti \emph{armature}, uno con carica $+Q$ e l'altro con carica $-Q$, di forma qualsiasi. Questo corrisponde ad avere induzione completa. Considerando un tubo di flusso infinitesimo con una faccia interna a un'armatura, per l' eq.\ref{eq:TuboFlusso} si ha che sulla sua faccia esterna il campo elettrostatico vale
+\begin{equation}
+E_{i} = \dfrac{\dx{q_{i}}}{\ezero \dx{S}_{i}}
+\end{equation}
+dove $q_{i}$ è la carica racchiusa nel tubo di flusso, e dunque la differenza di potenziale tra le due armature $A$ e $B$ vale
+\begin{equation}
+V_{A} - V_{B} = \int_{A}^{B} \dfrac{\dx{q_{i}}}{\ezero \dx{S}_{i}} \dx{r}_{i} = \dx{q_{i}} \int_{A}^{B} \dfrac{1}{\ezero \dx{S}_{i}} \dx{r}_{i}
+\end{equation}
+e dunque 
+\begin{equation}
+\dx{q}_{i} = \dfrac{V_{A} - V_{B}}{\int_{A}^{B} \dfrac{\dx{r}_{i}}{\ezero \dx{S}_{i}}}
+\end{equation}
+Dato che l'induzione è completa (non ci sono linee di flusso che non sono conteggiate qui) la carica totale vale 
+\begin{align}
+Q 	&= \int \dx{q}_{i} = \int \dfrac{V_{A}-V_{B}}{\int_{A}^{B} \dfrac{\dx{r}_{i}}{ \ezero \dx{S}_{i}}} \\
+	&= (V_{A} - V_{B}) \left[ \int \dfrac{\ezero}{\int_{A}^{B} \dfrac{\dx{r}_{i}}{\dx{S}_{i}}}\right] \\
+	&:= (V_{A} - V_{B}) C 
+\end{align}
+dove il valore dell'integrale, detto \emph{capacità} $C$, è una costante che dipende solo dalla geometria e dal materiale del condensatore. Si vede subito che essa può essere ricavata come
+\begin{mdframed}
+\begin{equation}
+C = \dfrac{Q}{\Delta V}
+\end{equation}
+\end{mdframed}
+Le dimensioni della capacità sono 
+\begin{equation}
+[C] = \dfrac{[Q]}{[\Delta V]} = [Q]^{2} [M]^{-1} [L]^{-2} [T]^{2} := \SI{}{\farad}
+\end{equation}
+Il \emph{farad} F corrisponde a una capacità estremamente elevata: la maggior parte dei condensatori hanno capacità dell'ordine del $\SI{}{\micro\farad}$.
+
+\subsubsection{Condensatore a facce piane e parallele}
+Consideriamo un condensatore composto da due armature piane e parallele, ciascuna di area interna $S$ con densità di carica uniforme $\pm \sigma$, poste a distanza $d$ l'una dall'altra. Se $s \gg d^{2}$ le due armature si possono approssimare come piani indefiniti uniformemente carichi: si ha quindi, supponendo senza perdita di generalità che l'armatura di sinistra sia carica positivamente, il campo vale, rispettivamente a sinistra del condensatore, al suo interno e alla sua destra,
+\begin{gather}
+\mathbf{E}_{dx} = - \dfrac{\sigma}{2\ezero} \ihat + \dfrac{\sigma}{2\ezero} \ihat = 0 \\
+\mathbf{E}_{int} = + \dfrac{\sigma}{2\ezero} \ihat + \dfrac{\sigma}{2\ezero} \ihat = \dfrac{\sigma}{\ezero} \ihat \\
+\mathbf{E}_{sx} = + \dfrac{\sigma}{2\ezero} \ihat - \dfrac{\sigma}{2\ezero} \ihat = 0
+\end{gather}
+Il campo è non nullo solo nella zona all'interno del condensatore, e in essa è uniforme e diretto dall'armatura positiva a quella negativa. Essendo le armature conduttrici, dal teorema di Gauss si ricava che tutta la carica è distribuita sulle superfici interne delle armature, e che la densità di carica su di esse è quindi $\sigma = \frac{Q}{S}$. Dato che il campo all'interno del condensatore è uniforme, integrarlo da un'armatura all'altra corrisponde a moltiplicare il suo modulo per la distanza $d$:
+\begin{equation}
+\Delta V = \dfrac{\sigma d}{\ezero} = \dfrac{Q d}{S \ezero}
+\end{equation}
+\begin{mdframed}
+e dunque la capacità di un condensatore a facce piane e parallele vale
+\begin{equation}
+C = \dfrac{Q}{\Delta V} = \dfrac{\ezero S}{d}
+\end{equation}
+\end{mdframed}
+Nonostante i condensatori a facce piane e parallele siano i più semplici da trattare, quelli più usati sono cilindrici, per via della loro maggiore facilità di costruzione e della facilità con cui la loro capacità può essere variata.
+
+\subsubsection{Condensatori in serie e in parallelo}
+Due condensatori possono essere connessi in due modi: 
+\begin{itemize}
+\item \emph{in serie}, ovvero collegando l'armatura positiva dell'uno all'armatura negativa dell'altro;
+\item \emph{in parallelo} ovvero collegando l'armatura positiva dell'uno all'armatura positiva dell'altro.
+\end{itemize}
+In entrambi i casi, il sistema dei due condensatori sarà caratterizzato da una \emph{capacità equivalente} $C_{eq}$, ovvero potrà essere sostituito da un singolo condensatore con capacità $C_{eq}$ senza alterare il funzionamento del sistema. Calcoliamo la capacità equivalente nei due casi.
+\paragraph{In serie}
+In questo caso abbiamo $3$ armature indipendenti: quella collegata al punto $A$, quella centrale in comune ai due condensatori e quella collegata al punto $B$. Ognuna di esse è separata dalla successiva da una differenza di potenziale: chiamiamole $\Delta V_{1}$ e $\Delta V_{2}$. Dato che le cariche si spostano per induzione completa, le armature (contando anche quella dipendente) hanno cariche $+Q, -Q, +Q, -Q$. Le due armature estreme si comportano quindi come un condensatore con carica $Q$, differenza di potenziale $\Delta V_{1} + \Delta V_{2}$ e capacità $C_{eq}$:
+\begin{equation}
+\Delta V_{1} + \Delta V_{2} = \dfrac{Q}{C}
+\end{equation}
+Ma poiché $\Delta V_{i} = \frac{Q}{C_{i}}$ ciò equivale a 
+\begin{equation}
+Q \left( \dfrac{1}{C_{1}} + \dfrac{1}{C_{2}} \right) = \dfrac{Q}{C_{eq}}
+\end{equation}
+e quindi
+\begin{mdframed}
+\begin{equation}
+\dfrac{1}{C_{eq}} = \dfrac{1}{C_{1}} + \dfrac{1}{C_{2}}
+\end{equation}
+\end{mdframed}
+
+\paragraph{In parallelo}
+In questo caso abbiamo solo due armature indipendenti: quella collegata ad $A$ e quella collegata a $B$. I condensatori, che hanno cariche $Q_{1}$ e $Q_{2}$, hanno la stessa differenza di potenziale $\Delta V$. Essi equivalgono quindi a un condensatore con carica $Q_{1} + Q_{2}$, differenza di potenziale $\Delta V$ e capacità $C_{eq}$:
+\begin{equation}
+\Delta V = \dfrac{Q_{1} + Q_{2}}{C}
+\end{equation}
+Ma poiché $Q_{i} = Delta V C_{i}$ ciò equivale a 
+\begin{equation}
+\Delta V = \Delta V \dfrac{C_{1} + C_{2}}{C_{eq}}
+\end{equation}
+e quindi
+\begin{mdframed}
+\begin{equation}
+C_{eq} = C_{1} + C_{2}
+\end{equation}
+\end{mdframed}
+Se le facce del condensatore sono piane e parallele, ciò corrisponde a 
+\begin{equation}
+C_{eq} = \dfrac{\ezero (S_{1}+S_{2})}{d}
+\end{equation}
+In entrambi i casi, il ragionamento può essere iterato per un numero arbitrario di condensatori.
+
+\subsection{Energia immagazzinata in un condensatore}
+La carica di un condensatore richiede lavoro per portare cariche dello stesso segno su ciascuna armatura, fino a raggiungere carica complessiva $\pm Q$. Questo lavoro fornisce un'energia potenziale al condensatore: essa può essere calcolata in due diversi modi: in maniera più immediata tramite il potenziale, oppure in maniera più illustrativa del processo fisico tramite il lavoro svolto per caricare il condensatore.
+
+\paragraph{Calcolo tramite il potenziale}
+Consideriamo un condensatore con capacità $C$, composto da due armature $A$ e $B$, rispettivamente a potenziale $V_{A}$ e $V_{B}$ e carica $Q_{A} = - Q_{B}$. Abbiamo che $Q_{A} = C(V_{A} - V_{B})$ e quindi $Q_{B} = C(V_{B} - V_{A})$. Per l'equazione \ref{ES-eq:EnerTotSist}, l'energia immagazzinata nel condensatore è, essendo ognuna delle due armature equipotenziale, 
+\begin{equation}
+U_{tot} = \dfrac{1}{2} (Q_{A} V_{A} + Q_{B} V_{B}) = \dfrac{1}{2} [C (V_{A} - V_{B}) V_{A} + C (V_{B} - V_{A}) V_{B}] = \dfrac{1}{2} C (V_{A} - V_{B})^{2} = \dfrac{1}{2} C \Delta V^{2}
+\end{equation}
+e quindi, usando la relazione $Q = C \Delta V$, l'energia immagazzinata si può scrivere nei tre seguenti modi:
+\begin{mdframed}
+\begin{align}
+U &= \dfrac{1}{2} C \Delta V^{2} \\[5pt]
+U &= \dfrac{1}{2} Q \Delta V \\[5pt]
+U &= \dfrac{1}{2} \dfrac{Q^{2}}{C} 
+\end{align}
+\end{mdframed}
+
+\paragraph{Calcolo tramite il lavoro}
+Consideriamo il nostro condensatore inizialmente scarico, e pensiamo di spostare cariche infinitesime $\dx{q}$ dall'armatura $B$ all'armatura $A$ fino a ottenere su di essa una carica $Q$ (lasciano quindi una carica $-Q$ sull'armatura $B$). Il lavoro infinitesimo per unità di carica (misurato quindi in $\SI{}{\volt}$) svolto dal campo elettrostatico è 
+\begin{equation}
+\dx{L}_{C} = \mathbf{E} \cdot \mathbf{\dx{r}} = -\dx{V}
+\end{equation}
+e il lavoro vero e proprio che esso compie è
+\begin{equation}
+\dx{L} = \dx{q} \dx{L}_{C} = - \dx{q} \dx{V}
+\end{equation}
+Il lavoro \emph{della forza esterna} che usiamo per spostare la carica infinitesima di un tratto infinitesimo è
+\begin{equation}
+\dx{L}_{ext} = -\dx{L} = \dx{q} \dx{V} 
+\end{equation}
+e quindi il lavoro per spostare la carica infinitesima da $B$ ad $A$ quando la carica su $A$ è pari a $Q$ è 
+\begin{equation}
+\Delta L_{ext} = \int_{B}^{A} \dx{L}_{E} = \int_{B}^{A} \dx{q} \dx{V} = \dx{q} \int_{B}^{A} \dx{V} = \dx{q} \Delta V(q)
+\end{equation}
+Il lavoro totale per spostare tutte le cariche infinitesime si ottiene integrando ancora, questa volta su $q$:
+\begin{equation}
+L_{ext} = \int_{0}^{Q} \Delta V(q) \dx{q} = \int_{0}^{Q} \dfrac{Q}{C} \dx{q} = \dfrac{1}{2} \dfrac{Q^{2}}{C} = \dfrac{1}{2} C \Delta V^{2} 
+\end{equation}
+in accordo con il risultato ottenuto usando l'altro metodo. Questa energia si manifesta nel campo elettrostatico fra le armature, che è stato costruito spendendo il lavoro positivo $L_{ext}$.
+
+\subsubsection{Energia immagazzinata in un condensatore piano}
+Vediamo ora il caso particolare di un condensatore a facce piane e parallele, calcolando l'energia immagazzinata in esso in funzione del suo campo elettrostatico e delle sue dimensioni spaziali. Per quanto visto sopra, abbiamo che
+\begin{equation}
+U = \dfrac{1}{2} D \Delta V^{2}
+\end{equation}
+Ma essendo questo un condensatore a facce piane e parallele, abbiamo anche che $\Delta V = Ed$ e $C = \frac{\ezero S}{d}$. Quindi
+\begin{equation}
+U = \dfrac{1}{2} \dfrac{\ezero S}{d} E^{2} d^{2} = \dfrac{\ezero}{2} E^{2} Sd = \dfrac{\ezero}{2} E^{2} \mathcal{V}
+\end{equation}
+dove $\mathcal{V}$ è il volume compreso fra le armature. Possiamo quindi definire una nuova grandezza, la \emph{densità di energia del campo elettrico}, che vale in questo caso
+\begin{mdframed}
+\begin{equation}
+\mathcal{U}_{E} = \dfrac{1}{2} \ezero E^{2}
+\end{equation}
+\end{mdframed}
+Vedremo in seguito che questo è un caso particolare di un teorema molto più generale, il \emph{teorema di Poynting}, e che questo è \emph{sempre} il valore della densità di energia (locale) del campo elettrico.
+
+In elettrostatica, pensare l'energia come immagazzinata nella distribuzione di cariche o nel campo elettrico non fa differenza; se però si prendono in considerazione fenomeni dinamici, essa \emph{deve} essere interpretata come immagazzinata nel campo elettromagnetico.
+
+\subsection{Dielettrici}
+Gli \emph{isolanti}, o \emph{dielettrici}, sono materiali che non permettono lo spostamento libero di cariche. Essi possono essere schematizzati come reticoli di atomi fissi che tengono legati a sé tutti gli elettroni.
+\subsubsection{Osservazioni sperimentali}
+Consideriamo un condensatore a facce piane e parallele. Usando la solita notazione, esso avrà capacità $C_{0} = \ezero \frac{S}{d}$ e genererà un campo elettrico di modulo $E = \frac{Q}{\ezero S}$, avendo quindi differenza di potenziale $\Delta V = Ed = \frac{Q}{C_{0}}$. Se isoliamo il condensatore e mettiamo una lastra di \emph{conduttore} di spessore $D$ all'interno del condensatore, a distanza $d'$ dall'armatura positiva, avremo che il campo nello spessore $D$ all'interno del conduttore sarà nullo. La differenza di potenziale diventerà quindi $\Delta V = Ed' + 0D + E(d - d' - D) = E(d - D) < \Delta V_{0}$, annullandosi per $D = d$. 
+
+Mettiamo invece una lastra di \emph{dielettrico} nel condensatore. Sperimentalmente si osserva quanto segue:
+\begin{fact}
+Inserendo una lastra di dielettrico in un condensatore isolato con differenza di potenziale $\Delta V_{0}$, si ha un calo della differenza di potenziale, che però è minore di quello che si otterrebbe se la lastra fosse in materiale conduttore. La differenza di potenziale cala linearmente con lo spessore della lastra, fino a raggiungere al riempimento totale del condensatore un valore 
+\begin{equation}
+\Delta V_{k} = \dfrac{\Delta V_{0}}{k}
+\end{equation}
+dove $k$ è una costante caratteristica del materiale della lastra, detta \emph{costante dielettrica relativa}. Vale sempre $k>1$.
+
+Inoltre, a differenza di quanto avviene con una lastra conduttrice, sulle facce della lastra isolante non compare carica libera.
+\end{fact}
+Le due armature hanno ancora carica $\pm Q$, dunque il sistema è ancora un condensatore, ma la sua nuova capacità è 
+\begin{equation}
+C_{k} = \dfrac{Q}{\Delta V_{k}} = k \dfrac{Q}{\Delta V_{0}} = kC_{0} > C_{0}
+\end{equation}
+Questo vale per tutti i condensatori, non solo per quelli a facce piane. In particolare, per questi vale
+\begin{equation}
+C = \dfrac{\varepsilon S}{D}
+\end{equation}
+dove la costante
+\begin{equation}
+\varepsilon = k \ezero > \ezero
+\end{equation}
+è detta \emph{costante dielettrica} (assoluta) del materiale.
+
+\subsubsection{Carica superficiale di polarizzazione}
+A cosa è dovuto l'abbassamento di potenziale dopo l'inserimento di un dielettrico? Dobbiamo avere che
+\begin{equation}
+\Delta V_{k} = \dfrac{\Delta V_{0}}{k} = \dfrac{1}{k} \int_{0}^{d} \mathbf{E} \cdot \mathbf{\dx{r}} = \int_{0}^{d} \mathbf{E}_{k} \cdot \mathbf{\dx{r}} 
+\end{equation}
+e dunque deve valere 
+\begin{equation}
+E_{k} = \dfrac{E}{k}
+\end{equation}
+Mentre un conduttore scherma completamente il suo interno da un campo elettrico esterno, un dielettrico riesce soltanto ad abbassare il campo al suo interno. Nel caso particolare di un condensatore a facce piane, si ha anche che 
+\begin{equation}
+E_{k} = \dfrac{\sigma}{\ezero k} = \dfrac{\sigma_{k}}{\ezero}
+\end{equation}
+e dunque (il risultato è in realtà valido per qualsiasi tipo di condensatore) 
+\begin{equation}
+\sigma_{k} = \dfrac{\sigma}{k}
+\end{equation}
+Dunque l'abbassamento del campo elettrico all'interno è dovuto all'abbassamento della densità di carica superficiale sulle armature (in un conduttore, l'annullamento è dovuto a un annullamento della densità di carica).
+
+Vediamo quantitativamente il valore di questo abbassamento. Applichiamo il teorema di Gauss a una superficie cilindrica con area di base $A$ posto a cavallo tra un'armatura e il dielettrico (quindi con una base interna all'armatura e una interna al dielettrico) e con la superficie laterale parallela al campo elettrico interno. Abbiamo che il campo sulla superficie all'interno dell'armatura è nullo e dunque ha flusso nullo attraverso essa, così come attraverso la superficie laterale, a cui è parallelo. Rimane quindi solo il flusso attraverso la base all'interno del dielettrico. Se assumiamo che la densità volumetrica di carica all'interno del dielettrico sia nulla, la carica interna alla superficie deve essere dovuta alle densità superficiali sull'armatura $\sigma$ e sul dielettrico $\sigma_{p}$. Dobbiamo avere quindi
+\begin{equation}
+E_{k} \cdot A = \dfrac{\sigma A - \sigma_{p} A}{\ezero} = \dfrac{\sigma_{k} A}{\ezero}
+\end{equation}
+e dunque (si noti il segno $-$)
+\begin{equation}
+\sigma_{k} = \sigma - \sigma_{p}
+\end{equation}
+Come possiamo calcolarci $\sigma_{p}$ conoscendo solo $\sigma$? Sappiamo che $E_{k} = \frac{\sigma}{\ezero} - \frac{\sigma_{p}}{\ezero}$; inoltre
+\begin{equation}
+E_{k} = \dfrac{\sigma}{\ezero k} = \dfrac{\sigma}{\ezero} \left[ \dfrac{1}{k} -1 +1 \right] = \dfrac{\sigma}{\ezero} \left[ 1 - \dfrac{k-1}{k} \right]
+\end{equation}
+Confrontando le due equazioni, abbiamo quindi che 
+\begin{mdframed}
+\begin{equation}
+\sigma_{p} = \dfrac{k-1}{k} \sigma < \sigma
+\end{equation}
+\end{mdframed}
+$\sigma_{p}$ è detta \emph{carica di polarizzazione}. Si noti che più $k$ aumenta, più $\sigma_{p}$ si avvicina a $\sigma$.
+
+Si noti anche che $E_{k}$ è una grandezza macroscopica: esso è la media integrale del campo elettrostatico microscopico all'interno del dielettrico, che è fortemente variabile per via dei contributi nucleari ed elettronici. $E_k$ coincide col campo che sarebbe generato dalla sovrapposizione di $\sigma$ e $\sigma_{p}$ nello spazio vuoto.
+
+\subsubsection{Vettore polarizzazione e dielettrici uniformi}
+A questo punto abbiamo però solamente spostato la domanda: a cosa è dovuta la comparsa di $\sigma_{p}$? La risposta si ottiene a livello microscopico: anche se gli elettroni sono vincolati ai singoli atomi, il campo elettrico esterno causa uno spostamento degli orbitali (negativi) e del nucleo (positivo) in due direzioni opposte. Si ha quindi che il vettore $\boldsymbol{\mathbf{\delta}}$ diventa non nullo, e ogni atomo guadagna quindi un momento di dipolo $\mathbf{p} = q \boldsymbol{\mathbf{\delta}}$, dove $q$ è la carica del suo nucleo. Sia $n$ il numero di atomi per unità di volume, il vettore \emph{polarizzazione} è definito come il momento di dipolo per unità di volume:
+\begin{equation}
+\mathbf{P} = n\mathbf{p}
+\end{equation}
+Se il dielettrico è costituito da un solo elemento, si ha $\mathbf{P} = n q \boldsymbol{\mathbf{\delta}}$. In ogni caso, un aumento di $E$ porta a un aumento di $\delta$, che a sua volta porta a un aumento di $P$.
+\begin{mdframed}
+La maggior parte dei materiali sono \emph{dielettrici lineari}, ovvero vale la relazione empirica
+\begin{equation}
+\mathbf{P} = \ezero (k-1) \mathbf{E}_{k} := \ezero \chi \mathbf{E}_{k} 
+\end{equation}
+dove $\chi = k - 1$ è una costante caratteristica del materiale detta \emph{suscettività elettrica}.
+\end{mdframed}
+Per alcuni materiali (\emph{dielettrici non uniformi}), $k$ non è uniforme.. Per altri materiali (\emph{dielettrici anisotropi}) $k$ non può essere considerato uno scalare, ma una matrice $3 \times 3$; in questo caso, $\mathbf{E} \nparallel \mathbf{P}$.
+
+Possiamo ora giustificare, per un dielettrico lineare uniformemente polarizzato, l'assunzione che la densità volumetrica di carica sia nulla: se $\mathbf{P}$ è uniforme, lo è anche $\mathbf{p}$ e ciò significa che all'interno del dielettrico ogni dipolo compensa quelli adiacenti. Rimangono quindi osservabili solo i dipoli nei due strati superficiali. L'espressione di $\sigma_{p}$ in funzione di $\sigma$ vale quindi solo per dielettrici uniformemente polarizzati.
+
+Ci chiediamo a questo punto quale sia la relazione tra $\sigma_{p}$ e $\mathbf{P}$ in un dielettrico uniforme. Per semplicità consideriamo un dielettrico elementare, ma il ragionamento può essere esteso considerando la carica media. Considerando prima il caso in cui $\mathbf{E}$ è normale (localmente) all'armatura, segue da quanto detto sopra che i dipoli osservabili sono quelli degli atomi che si trovano entro uno spessore $\delta$ dalla superficie: essi producono quindi una densità di carica
+\begin{equation}
+\sigma_{p} = nq\delta = P
+\end{equation}
+Nel caso più generale in cui $\mathbf{E}$ forma un angolo $\theta$ con il versore normale alle armature $\versor{n}$, lo spessore di dipoli osservabili si restringe alla proiezione di $\boldsymbol{\mathbf{\delta}}$ sulla normale all'armatura, ovvero $\delta \cos \theta$.
+\begin{mdframed}
+Da ciò segue che, in un dielettrico uniforme,
+\begin{equation}
+\sigma_{p} = nq\delta \cos \theta = P \cos \theta = \mathbf{P} \cdot \versor{n}
+\end{equation}
+\end{mdframed}
+
+\paragraph{Derivazione della formula lineare}
+La formula per i dielettrici lineari può a questo punto essere ricavata a priori, quantomeno nel caso di un condensatore a facce piane e parallele. Consideriamo una lastra di dielettrico uniforme immersa in un condensatore a facce piane e parallele. Il modulo del campo elettrico fuori dalla lastra vale $E_{0} = \frac{\sigma}{\ezero}$ e la densità di carica di polarizzazione sulle superfici del dielettrico vale $\sigma_{p} = \mathbf{P} \cdot \versor{n}$. Il modulo del campo elettrico dentro la lastra è generato dalla sovrapposizione di quello esterno e di quello generato dalle due distribuzioni planari uniformi approssimativamente infinite sulla superficie del dielettrico: il suo modulo è quindi $E_{k} = \frac{\sigma - \sigma_{p}}{\ezero} = E_{0} - \frac{P}{\ezero}$. Da queste due equazioni e sostituendo $E_{0} = kE_{k}$ si ricava che la polarizzazione vale
+\begin{equation}
+\mathbf{P} = \ezero (E_{0} - E_{k}) = \ezero (kE_{k} - E_{k}) = \ezero (k - 1) E = \ezero \dfrac{k-1}{k}E_{0}
+\end{equation}
+Si noti la differenza fra le ultime due formule: una è funzione del campo interno, l'altra del campo esterno.
+
+\subsubsection{Polarizzazione non uniforme}
+Se un dielettrico non è polarizzato uniformemente, neanche $\boldsymbol{\mathbf{\delta}}$ è uniforme, dunque i dipoli non si compensano completamente e si forma una \emph{densità volumetrica di carica di polarizzazione} $\rho_{p}$. Consideriamo una superficie cubica infinitesima $\Sigma$ contenuta all'interno di un dielettrico lineare (ma non uniforme) con densità di carica nulla in assenza di campi elettrici. Se inseriamo il dielettrico in un campo, sulla faccia superiore $\dx{S}$ di $\Sigma$ si formerà una densità di carica $\sigma_{p} = \mathbf{P} \cdot \versor{n}$. Questa densità di carica è dovuta a una carica di polarizzazione $\dx{q} = \sigma_{p} \dx{S} = \mathbf{P} \cdot \mathbf{\dx{S}}$ che passa appena attraverso $\dx{S}$. Se la polarizzazione fosse uniforme, questa carica sarebbe compensata da una carica $-\dx{q} = \mathbf{P} \cdot \mathbf{-\dx{S}}$ attraverso la faccia inferiore, e analogamente per le altre due coppie di facce. Dato che però essa non è uniforme, i valori di $\mathbf{P}$ sono diversi sulle due facce, e quindi la carica $Q$ contenuta in $\Sigma$ può essere non nulla. Abbiamo quindi che $Q$ è uguale sia all'integrale \emph{sulle facce} delle cariche che passano attraverso di esse che, per definizione, all'integrale \emph{sul volume} della densità di carica volumetrica, che deve essere di polarizzazione essendo nulla in assenza di campi elettrici. In simboli,
+\begin{equation}
+-\oint \mathbf{P} \cdot \mathbf{\dx{S}} = - \oint \dx{q} = Q = \int_{V_{\Sigma}} \rho_{p} \dx{\tau}
+\end{equation}
+Ma per il teorema della divergenza 
+\begin{equation}
+-\oint_{\Sigma} \mathbf{P} \cdot \mathbf{\dx{S}} = - \int_{V_{\Sigma}} (\bnabla \cdot \mathbf{P}) \dx{\tau}
+\end{equation}
+ed essendo $\Sigma$ arbitraria l'uguaglianza degli integrali implica quella degli integrandi:
+\begin{mdframed}
+\begin{equation} \label{eq:DivPolarizz}
+\bnabla \cdot \mathbf{P} = - \rho_{p}
+\end{equation}
+\end{mdframed}
+Ciò conferma quanto ricavato nel paragrafo precedente: se un dielettrico è uniforme e con densità di carica non di polarizzazione $\rho$ nulla, abbiamo
+\begin{equation}
+\rho_{p} = - \bnabla \cdot \mathbf{P} = - \bnabla \cdot \mathbf{E} = - \rho = 0
+\end{equation}
+
+\subsection{Vettore spostamento elettrico}
+Consideriamo la divergenza del campo elettrostatico. Per il teorema di Gauss, essa è proporzionale alla densità di carica nel punto in cui è calcolata. Ma questa densità di carica può avere due origini: cariche libere ($\rho_{l}$) e cariche di polarizzazione ($\rho_{p}$). Usando anche l'eq. \ref{eq:DivPolarizz} possiamo quindi scrivere
+\begin{equation}
+\bnabla \cdot \mathbf{E} = \dfrac{\rho}{\ezero} = \dfrac{\rho_{l} + \rho_{p}}{\ezero} = \dfrac{\rho_{l} - \bnabla \cdot \mathbf{P}}{\ezero}
+\end{equation}
+e quindi abbiamo che, usando la linearità del prodotto scalare,
+\begin{align}
+\ezero(\bnabla \cdot \mathbf{E}) + \bnabla \cdot \mathbf{P}	&= \rho_{l} \\
+\bnabla \cdot (\ezero \mathbf{E} + \mathbf{P}) 					&= \rho_{l}
+\end{align}
+Definiamo quindi il vettore \emph{spostamento elettrico}, 
+\begin{mdframed}
+\begin{equation}
+\mathbf{D} = \ezero \mathbf{E} + \mathbf{P}
+\end{equation}
+\end{mdframed}
+e possiamo scrivere (ottenendo la seconda equazione integrando la prima e applicando il teorema della divergenza)
+\begin{mdframed}
+\begin{gather}
+\bnabla \cdot \mathbf{D} = \rho_{l} \\
+\oint \mathbf{D} \cdot \mathbf{\dx{S}} = Q_{l}
+\end{gather}
+\end{mdframed}
+
+Possiamo riassumere il ruolo dei tre vettori nel seguente modo: $\mathbf{E}$ è generato dalla distribuzione complessiva di carica, $\mathbf{P}$ è generato solo dalle cariche di polarizzazione e $\mathbf{D}$ è generato solo dalle cariche libere (ovvero dalle cariche che si spostano, da cui il nome). Nel vuoto abbiamo che $\mathbf{P} \equiv 0$, quindi si ha sempre che $\mathbf{D} \equiv \ezero \mathbf{E}$. In un dielettrico neutro (ma non per forza lineare, omogeneo o isotropo) la carica libera compresa in una superficie chiusa arbitraria è nulla, quindi è nullo anche il flusso di $\mathbf{D}$ attraverso una qualsiasi superficie chiusa. Ciò si esprime dicendo che $\mathbf{D}$ è un \emph{campo solenoidale}. $\mathbf{D}$ non è però, in generale, conservativo.
+
+In un dielettrico isotropo lineare, abbiamo che
+\begin{align}
+\mathbf{D} = \ezero \mathbf{E} + \mathbf{P} &= \ezero \mathbf{E} + \ezero (k-1) \mathbf{E} = \ezero k \mathbf{E} = \varepsilon \mathbf{E} \\
+											&= \dfrac{\ezero \mathbf{P}}{(k-1)\ezero} + \mathbf{P} = \dfrac{k}{k-1} \mathbf{P}
+\end{align}
+\begin{mdframed}
+Anche se $\mathbf{D}$ non fornisce, strettamente parlando, informazioni sul sistema in più rispetto a $\mathbf{P}$ ed $\mathbf{E}$, esso è molto comodo come strumento di calcolo, dato che si può ricavare dalla distribuzione delle cariche libere (che di solito sono note) e fornisce poi un modo per ricavare gli altri due campi. In particolare, in un dielettrico lineare isotropo si possono usare le due relazioni appena ricavate:
+\begin{gather}
+\mathbf{E} = \dfrac{\mathbf{D}}{k \ezero} \\
+\mathbf{P} = \dfrac{k-1}{k} \mathbf{D}
+\end{gather}
+\end{mdframed}
+Infine, in un dielettrico omogeneo, lineare e isotropo in assenza di cariche libere abbiamo che
+\begin{equation}
+- \rho_{p} = \bnabla \cdot \mathbf{P} = \dfrac{k-1}{k} \bnabla \cdot \mathbf{D} = \dfrac{k-1}{k} \cdot 0 = 0
+\end{equation}
+risultato quindi confermato ancora una volta. Se però il dielettrico non è omogeneo, abbiamo che $k = k(x,y,z)$ e per l'operatore nabla sussiste una regola analoga a quella per la derivata del prodotto di due funzioni:
+\begin{equation}
+-\rho_{p} = \bnabla \cdot \mathbf{P} = \dfrac{k-1}{k} \bnabla \cdot \mathbf{D} + \mathbf{D} \cdot \bnabla \left( \dfrac{k-1}{k} \right) = \mathbf{D} \cdot \bnabla \left( \dfrac{k-1}{k} \right)
+\end{equation}
+Abbiamo quindi trovato un modo per ricavare $\rho_{p}$ conoscendo la distribuzione delle cariche libere e la variazione di $k$ nello spazio.
+
+\subsubsection{Interfaccia tra due dielettrici}
+Abbiamo visto che dalla conservatività del campo elettrico segue che la componente di $\mathbf{E}$ parallela a una superficie carica deve conservarsi nell'attraversarla, e dal teorema di Gauss segue che la sua componente ortogonale deve avere una discontinuità pari in valore assoluto a $\dfrac{\sigma}{\ezero}$. Questi risultati, essendo del tutto generali, si applicano anche all'attraversamento di una superficie che possiede una carica di polarizzazione. Vediamo ora che forma prendono queste leggi per il vettore $\mathbf{D}$. 
+
+Considerando una superficie cilindrica infinitesima $\Sigma$ con l'asse ortogonale alla superficie, e mandandone l'altezza, e quindi l'area laterale, a $0$, si ottiene
+\begin{equation}
+Q_{l} = 0 = \mathbf{D}_{1} \cdot \mathbf{\dx{S}}_{1} + \mathbf{D}_{2} \cdot \mathbf{\dx{S}}_{2} = \mathbf{D}_{1} \cdot \versor{n} + \mathbf{D}_{2} \cdot (-\versor{n}) = D_{1}^{\perp} - D_{2}^{\perp}
+\end{equation}
+Abbiamo quindi ottenuto che \emph{attraversando la superficie di un dielettrico, $D_{\perp}$ si conserva}. 
+
+Da ciò segue anche che 
+\begin{equation}
+\ezero k_{1} E_{1} \cos \theta_{1} = \ezero k_{1} E_{1}^{\perp} = D_{1}^{\perp} = D_{2}^{\perp} = \ezero k_{2} E_{2}^{\perp} = \ezero k_{2} E_{2} \cos \theta_{2}
+\end{equation}
+il che, combinato con la conservazione della componente parallela di $\mathbf{E}$, $E_{1} \sin \theta_{1} = E_{1}^{\parallel} = E_{2}^{\parallel} = E_{2} \sin \theta_{2}$, fornisce la \emph{legge di Snell} per le direzioni del campo elettrico prima e dopo l'attraversamento della superficie di un dielettrico:
+\begin{mdframed}
+\begin{equation}
+\dfrac{k_{2}}{k_{1}} = \dfrac{\tan \theta_{2}}{\tan \theta_{1}}
+\end{equation}
+\end{mdframed}
+
+\subsection{Dielettrici anisotropi}
+Nei dielettrici isotropi, $k$ è uno scalare, dunque $\mathbf{D} \parallel \mathbf{E} \parallel \mathbf{P}$. Nei dielettrici anisotropi ciò non sussiste, poiché per essi $k$ è una matrice $3 \times 3$. Le relazioni tra i vettori nei dielettrici lineari sono analoghe, ma adattate alla forma matriciale:
+\begin{align}
+\mathbf{D} &= \ezero k \mathbf{E} = \ezero \begin{pmatrix} k_{11} & k_{12} & k_{13} \\ k_{21} & k_{22} & k_{23} \\ k_{31} & k_{32} & k_{33} \end{pmatrix} \begin{pmatrix} E_{x} \\ E_{y} \\ E_{z} \end{pmatrix}\\[10pt]
+\mathbf{P} &= \ezero (k-I_{3}) \mathbf{E} = \ezero \begin{pmatrix} k_{11}-1 & k_{12} & k_{13} \\ k_{21} & k_{22}-1 & k_{23} \\ k_{31} & k_{32} & k_{33}-1 \end{pmatrix} \begin{pmatrix} E_{x} \\ E_{y} \\ E_{z} \end{pmatrix}
+\end{align}
+Si dimostra che la matrice $k$ è reale e simmetrica. Per il \textsc{teorema spettrale}, quindi, esiste una base ortonormale in cui essa è diagonale. In termini fisici, ciò corrisponde a dire che esiste un sistema di riferimento $(x',y',z')$ in cui vale
+\begin{equation}
+\begin{pmatrix} P_{x'} \\ P_{y'} \\ P_{z'} \end{pmatrix} = \ezero \begin{pmatrix} k_{11}-1 & 0 & 0 \\ 0 & k_{22}-1 & 0 \\ 0 & 0& k_{33}-1 \end{pmatrix} \begin{pmatrix} E_{x'} \\ E_{y'} \\ E_{z'} \end{pmatrix} = \begin{pmatrix} (k_{11}-1)E_{x'} \\ (k_{22}-1)E_{y'} \\ (k_{33}-1)E_{z'} \end{pmatrix}
+\end{equation}
+che in generale non è parallelo a $\mathbf{E}$: lo è se e solo se $k_{11} = k_{22} = k_{33}$ (che corrisponde a un dielettrico isotropo) o $\mathbf{E}$ ha (nella base diagonale, che è di autovettori) una sola componente, ed è quindi un autovettore. I tre assi i cui versori costituiscono la base diagonale sono detti \emph{assi ottici}: fisicamente, in ogni dielettrico anisotropo esistono questi tre assi, un campo elettrico diretto lungo i quali genera un vettore polarizzazione $\mathbf{P} \parallel \mathbf{E}$. In particolare, dato che l'indice di rifrazione lungo un asse dipende dalla componente di $k$ lungo quell'asse, se $k_{i} \neq k_{j}$ la luce rifrangendosi si sdoppia, un fenomeno noto come \emph{birifrazione}.
+
+\subsection{Energia elettrostatica di un condensatore riempito con dielettrico}
+Abbiamo visto che, in un condensatore pieno di dielettrico, capacità e campo elettrico sono pari a
+\begin{equation}
+C_{k} = \varepsilon \dfrac{S}{d} \qquad E_{k} = \dfrac{\sigma}{\varepsilon} 
+\end{equation}
+L'energia elettrostatica immagazzinata vale quindi
+\begin{equation}
+U = \dfrac{1}{2} \dfrac{Q^{2}}{C_{k}} = \dfrac{1}{2} \dfrac{(\sigma S)^{2} d}{\varepsilon S}= \dfrac{1}{2} \left( \dfrac{\sigma}{\varepsilon} \right)^{2} \varepsilon (Sd)
+\end{equation}
+\begin{mdframed}
+Questo valore è maggiore di quello che si avrebbe in un condensatore vuoto con $E=E_{k}$: l'energia in più viene usata per polarizzare il dielettrico. La densità di energia è
+\begin{equation}
+\mathcal{U} = \dfrac{1}{2} \varepsilon E_{k}^{2}
+\end{equation}
+\end{mdframed}
+Si indica che per un dielettrico anisotropo vale una versione più generale di questa relazione: $\mathcal{U} = \dfrac{1}{2} \mathbf{E} \cdot \mathbf{D}$.
+\end{document}
